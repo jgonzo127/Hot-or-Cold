@@ -5,22 +5,25 @@ $(document).ready(function(){
 	
 	$('#guessButton').click(function(e) {
 		e.preventDefault();
-		var userChoice = $('#userGuess').val();
+		var userGuess = $('#userGuess').val();
 		var $span = $('#count')
-		if (userChoice == "") {
-			alert('Please input a number!');
+		if (userGuess == "" || (isNaN(userGuess))) {
+			alert('Please input a number from 1-100!');
 			return;
-		} else {
-			$('#guessList').append('<li>' + userChoice + '</li>');
-			}
-			$span.text(Number($span.text()) + 1);
+		} else if (userGuess > 100) {
+			alert("Number must be 100 or less!");
+			return;
+		}
+		$('#guessList').append('<li>' + userGuess + '</li>');
+		$span.text(Number($span.text()) + 1);
+		$('#userGuess').val('');
 		})
-/*	for (i = 1; i<= userChoice; i++) {
-	if ( userChoice != 0) {
+/*	for (i = 1; i<= userGuess; i++) {
+	if ( userGuess != 0) {
         alert('warmer!');
-			} else if (userChoice > random) {
+			} else if (userGuess > random) {
     
-            } else if (userChoice = random) {
+            } else if (userGuess = random) {
 
 			} else 
 
