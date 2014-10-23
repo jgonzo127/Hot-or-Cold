@@ -40,8 +40,8 @@ $(document).ready(function(){
 	function randomNum() {
 		var answer = Math.floor((Math.random() * 100) + 1);
 		console.log(answer);
-
 		return answer;
+		
 
 	}
 
@@ -97,10 +97,9 @@ $(document).ready(function(){
 		guessFlag = true;
 		guessCount = 0;
 		setCount(guessCount);
-		answer = randomNum();
 		clearText();
 		found=false;
-
+		answer=randomNum();
 	}
 
 	//clear text box
@@ -109,7 +108,7 @@ $(document).ready(function(){
 	}
 
 	//reloads new games
-	$('.new').click(function() {
+	$('.new').on('click', function() {
 		location.reload();
 		newGame();
 	});
@@ -124,13 +123,13 @@ $(document).ready(function(){
 
 
 	/*--- Display information modal box ---*/
-  	$(".what").click(function(){
+  	$(".what").on('click', function(){
     	$(".overlay").fadeIn(1000);
 
   	})
 
   	/*--- Hide information modal box ---*/
-  	$("a.close").click(function(){
+  	$("a.close").on('click', function(){
   		$(".overlay").fadeOut(1000);
   	})
 
