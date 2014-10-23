@@ -99,7 +99,7 @@ $(document).ready(function(){
 		setCount(guessCount);
 		clearText();
 		found=false;
-		answer=randomNum();
+		answer = randomNum();
 	}
 
 	//clear text box
@@ -108,7 +108,8 @@ $(document).ready(function(){
 	}
 
 	//reloads new games
-	$('.new').on('click', function() {
+	$('.new').on('click', function(e) {
+		e.preventDefault();
 		location.reload();
 		newGame();
 	});
