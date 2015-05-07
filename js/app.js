@@ -39,7 +39,7 @@ $(document).ready(function(){
 	//generates random number
 	function randomNum() {
 		var answer = Math.floor((Math.random() * 100) + 1);
-		console.log(answer);
+		
 		return answer;
 		
 
